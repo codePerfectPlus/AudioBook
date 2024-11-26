@@ -6,17 +6,9 @@ from tqdm import tqdm
 
 from audiobook.config import speed_dict
 from audiobook.utils import (
-    docs_to_json,
-    epub_to_json,
-    html_to_json,
     load_json,
-    mobi_to_json,
-    odt_to_json,
-    pdf_to_json,
     speak_text,
-    txt_to_json,
     write_json_file,
-    rtf_to_json
 )
 from audiobook.utils import get_json_metadata
 
@@ -73,10 +65,7 @@ class AudioBook(object):
                 metadata["pages"] = len(json_book)
                 return json_book, metadata
 
-        if json_book:
-            json_book, metadata = get_json_metadata(input_book_path=input_book_path, password=password)
-        else:
-            raise NotImplementedError("Only PDF, TXT, EPUB, MOBI, ODT, HTTP, RTF, DOCX and DOC files are supported")
+        json_book, metadata = get_json_metadata(input_book_path=input_book_path, password=password)
 
         write_json_file(json_book, output_file_path)
 
