@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="audiobook",
-    version="3.0.3",
+    version="3.0.4",
     author="CodePerfectPlus",
     author_email="deepak008@live.com",
     description="Listen to your favourite audiobook",
